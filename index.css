@@ -1,0 +1,83 @@
+/* Full-screen centered layout */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* stack elements top to bottom */
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ff416c, #ff4b2b, #1e90ff, #32cd32);
+    background-size: 100% 100%;
+    animation: gradientMove 8s ease infinite;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+/* Subtle glowing dots overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(238, 84, 84, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+/* Headings */
+h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+/* Input box */
+input[type=number] {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff4b2b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    background-color: #ff416c;
+    transform: scale(1.05);
+}
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Timer display */
+#timer {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+/* Smooth gradient background animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
